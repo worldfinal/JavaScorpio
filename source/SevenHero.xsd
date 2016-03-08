@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:element name="SevenHeroConfig">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" maxOccurs="1" ref="Heros" />
+				<xsd:element minOccurs="0" maxOccurs="1" ref="News" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="Heros">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" maxOccurs="unbounded" ref="Hero"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Hero">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="1" maxOccurs="1" type="xsd:string" name="number" />
+				<xsd:element minOccurs="1" maxOccurs="1" type="xsd:string" name="password" />
+				<xsd:element minOccurs="1" maxOccurs="1" type="xsd:string" name="name" />
+				<xsd:element minOccurs="1" maxOccurs="1" type="xsd:integer" name="delay" />
+				<xsd:element minOccurs="0" maxOccurs="1" ref="running_time" />
+				<xsd:element minOccurs="0" maxOccurs="1" type="xsd:string" name="addBuildingCard" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="running_time">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="1" maxOccurs="1" ref="Period" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	
+	<xsd:element name="News">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="1" maxOccurs="1" type="xsd:string" name="train" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Period">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="1" maxOccurs="1" type="xsd:integer" name="from" />
+				<xsd:element minOccurs="1" maxOccurs="1" type="xsd:integer" name="to" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
