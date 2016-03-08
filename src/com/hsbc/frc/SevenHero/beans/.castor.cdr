@@ -1,0 +1,7 @@
+#Fri Mar 22 20:10:25 CST 2013
+com.hsbc.frc.SevenHero.beans.News=com.hsbc.frc.SevenHero.beans.descriptors.NewsDescriptor
+com.hsbc.frc.SevenHero.beans.Hero=com.hsbc.frc.SevenHero.beans.descriptors.HeroDescriptor
+com.hsbc.frc.SevenHero.beans.Period=com.hsbc.frc.SevenHero.beans.descriptors.PeriodDescriptor
+com.hsbc.frc.SevenHero.beans.Heros=com.hsbc.frc.SevenHero.beans.descriptors.HerosDescriptor
+com.hsbc.frc.SevenHero.beans.SevenHeroConfig=com.hsbc.frc.SevenHero.beans.descriptors.SevenHeroConfigDescriptor
+com.hsbc.frc.SevenHero.beans.Running_time=com.hsbc.frc.SevenHero.beans.descriptors.Running_timeDescriptor

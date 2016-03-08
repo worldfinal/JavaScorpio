@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- Output to Console -->
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%date %level [%thread] %10logger [%file:%line] %msg%n
+			</pattern>
+		</layout>
+	</appender>
+	<!-- Output to File -->
+	<appender name="FileHtml"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Encoding>GBK</Encoding>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>c:/7xlog/log/log-%d{yyyy-MM-dd}.html
+			</FileNamePattern>
+			<MaxHistory>30</MaxHistory>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.html.HTMLLayout">
+<!-- 		<pattern>%date%level%thread%10logger%file%line%msg</pattern> -->	
+			<pattern>%date%level%thread%10logger%file%line%msg</pattern>
+		</layout>
+	</appender>
+
+	<!-- Output by Email -->
+
+
+	<!--<appender name="Email" class="ch.qos.logback.classic.net.SMTPAppender">
+		<SMTPHost>mail.gdlottery.cn</SMTPHost>
+		<To>13430271734@126.com</To>
+		<From>mail.gdlottery.cn</From>
+		<Subject>TESTING Email Function:%logger{20} - %m</Subject>
+		<layout class="ch.qos.logback.classic.html.HTMLLayout">
+			<pattern>%date%level%thread%10logger%file%line%msg</pattern>
+		</layout>
+	</appender>
+	--><!-- Output to Database -->
+
+	<!--
+		<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+		<connectionSource
+		class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+		<driverClass>net.sourceforge.jtds.jdbc.Driver</driverClass>
+		<url>jdbc:jtds:sqlserver://192.168.0.202:1433/weblottery</url>
+		<user>weblottery</user> <password>123456</password>
+		</connectionSource> </appender>
+	--><!-- TRACE < DEBUG < INFO < WARN < ERROR -->
+	<root level="OFF">
+		<appender-ref ref="Console" />
+		<appender-ref ref="FileHtml" />
+		<!--<appender-ref ref="Email" />
+		
+		--><!--
+			<appender-ref ref="DB"/>
+		-->
+		<!--
+			<appender-ref ref="Email" />
+		-->
+		<!--
+			<appender-ref ref="DB"/>
+		-->
+	</root>
+</configuration>
