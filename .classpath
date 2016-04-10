@@ -8,5 +8,8 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/spring4"/>
 	<classpathentry kind="lib" path="D:/Projects/JavaProject/ScorpioWF/WebRoot/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/selenium"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/wflib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/netty"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
