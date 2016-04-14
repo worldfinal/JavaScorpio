@@ -9,6 +9,11 @@ import org.springframework.util.Base64Utils;
 
 public class JavaTest {
 	@Test
+	public void test1() {
+		String s = "20124411";
+		System.out.println(s.substring(0,4));
+	}
+	@Test
 	public void testGenerateFileName() {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMmm'T'hhmmss'Z'");
 		Date date = new Date();
