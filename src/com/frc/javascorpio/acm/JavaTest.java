@@ -10,8 +10,10 @@ import org.springframework.util.Base64Utils;
 public class JavaTest {
 	@Test
 	public void test1() {
-		String s = "20124411";
-		System.out.println(s.substring(0,4));
+		String s = "https://api.projectoxford.ai/academic/v1.0/33evaluate";
+		int idx = s.lastIndexOf("/");
+		String str = s.substring(idx+1);
+		System.out.println(str);
 	}
 	@Test
 	public void testGenerateFileName() {

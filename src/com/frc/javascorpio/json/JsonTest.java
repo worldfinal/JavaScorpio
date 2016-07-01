@@ -12,17 +12,30 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import org.junit.Test;
+
+import com.alibaba.fastjson.JSON;
+
 import net.sf.json.JSONObject;
 
 public class JsonTest {
 	public static void main(String[] args) {
-		String fileName = "D:\\My Documents\\CandyCrush\\IPadMini\\levels";
+		String fileName = "D:\\My Documents\\CandyCrush\\20160521\\levels";
 		File files = new File(fileName);
 		String file[] = files.list();
 		for (int i = 0; i < file.length; i++) {
 			String path = fileName + "\\" + file[i];
 			modifyCandyCrush(path);
 //			System.out.println(path);
+		}
+	}
+	@Test
+	public void test() {
+		int k = 100;
+		System.out.println("sss");
+		for (int i = 4; i <= 128; i++) {
+			String str = String.format("	<Lock lockedLevel=\"%d\"/><!-- episode %d -->", k++, i);
+			System.out.println(str);
 		}
 	}
 	public static void writeTxtFile(String filePath, String content) {
@@ -43,6 +56,10 @@ public class JsonTest {
 		}
 
 	}
+	public static void modifyCandyCrushFromString(String str) {
+		com.alibaba.fastjson.JSONObject obj = JSON.parseObject(str);
+		
+	}
 	public static void modifyCandyCrush(String fileName) {
 	//	String fileName = "G:\\CandyCrush\\myLevel\\episode1level1.txt";
 		String json = readTxtFile(fileName);
@@ -56,17 +73,15 @@ public class JsonTest {
 			Map.Entry<String, Object> entry = (Map.Entry<String, Object>) it
 					.next();
 			System.out.println(entry.getKey() + "--->" + entry.getValue());
-			if ("numberOfColours".equals(entry.getKey())) {
+			if ("numberOfColours".equals(entry.getKey()) && "6".equals((String)entry.getValue().toString()) ) {
 				//			System.out.println("==========>" + entry.getValue());
-				if ("6".equals((String)entry.getValue().toString()) || "5".equals((String)entry.getValue().toString())) {
-					entry.setValue("4");
-				}
+				entry.setValue(5);
 			} else if ("moveLimit".equals(entry.getKey())) {
 	//			int moveLimit = Integer.parseInt(entry.getKey().toString());
 				String val = (String)entry.getValue().toString();
 				int v = Integer.parseInt(val);
-				int x = (int)(1.8 * v);
-				entry.setValue(String.format("%d", x));
+				int x = (int)(1.5 * v);
+				entry.setValue(x);
 			} 
 			if ("timeLimit".equals(entry.getKey())) {
 				System.out.println("========> timelimit: " + entry.getValue());
